@@ -14,11 +14,11 @@ func NewQueue() *Queue {
 	return queue
 }
 
-func (queue *Queue) Add(value interface{}) {
+func (queue *Queue) Enqueue(value interface{}) {
 	queue.internalList.PushBack(value)
 }
 
-func (queue *Queue) Get() interface{} {
+func (queue *Queue) Dequeue() interface{} {
 	element := queue.internalList.Front()
 	queue.internalList.Remove(element)
 	return element.Value
